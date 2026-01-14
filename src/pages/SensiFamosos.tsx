@@ -109,8 +109,10 @@ const generateSensi = (style: string, originalData?: PlayerData): Omit<SensiResu
   };
   
   const config = styleModifiers[style as keyof typeof styleModifiers] || styleModifiers["Balanceada"];
-  const adjust = (value: number) => 
-    Math.floor(value * config.multiplier + (Math.random() - 0.5) * config.variance * 2);
+  const adjust = (value: number) => {
+    const calculated = Math.floor(value * config.multiplier + (Math.random() - 0.5) * config.variance * 2);
+    return Math.max(1, Math.min(200, calculated)); // Limita entre 1 e 200
+  };
 
   return {
     geral: adjust(base.geral),
