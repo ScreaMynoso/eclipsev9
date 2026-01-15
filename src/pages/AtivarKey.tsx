@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { ArrowLeft, Key, Sparkles, Check, AlertCircle, ArrowUp } from "lucide-react";
+import { ArrowLeft, Key, Sparkles, Check, AlertCircle, ArrowUp, MessageCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
 import eclipseLogo from "@/assets/eclipse-logo.png";
@@ -271,11 +271,20 @@ const AtivarKey = () => {
               <AlertCircle size={20} className="text-primary flex-shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-medium text-foreground text-sm mb-1">
-                  Onde consigo uma key?
+                  Não tem uma key?
                 </h4>
-                <p className="text-xs text-muted-foreground">
-                  As keys são vendidas através do nosso canal oficial. Entre em contato para adquirir a sua e desbloquear todos os recursos.
+                <p className="text-xs text-muted-foreground mb-3">
+                  Adquira sua key através do nosso WhatsApp oficial e desbloqueie todos os recursos.
                 </p>
+                <a
+                  href="https://wa.me/5537991256879?text=Olá! Gostaria de adquirir uma key do Eclipse V9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-medium transition-colors"
+                >
+                  <MessageCircle size={16} />
+                  Adquirir Key no WhatsApp
+                </a>
               </div>
             </div>
           </div>
