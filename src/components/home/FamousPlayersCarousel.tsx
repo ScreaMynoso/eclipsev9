@@ -80,8 +80,8 @@ export const FamousPlayersCarousel = () => {
 
   return (
     <>
-      <section className="py-6">
-        <div className="flex items-center justify-between px-4 mb-4">
+      <section className="py-6 lg:py-8">
+        <div className="flex items-center justify-between px-4 lg:px-0 mb-4">
           <h2 className="font-display text-lg font-semibold text-foreground">
             Sensibilidade dos Famosos
           </h2>
@@ -94,15 +94,16 @@ export const FamousPlayersCarousel = () => {
           </Link>
         </div>
 
-        <div className="flex gap-4 overflow-x-auto px-4 pb-4 hide-scrollbar">
+        {/* Mobile/Tablet: horizontal scroll | Desktop: grid */}
+        <div className="flex gap-4 overflow-x-auto px-4 pb-4 hide-scrollbar lg:px-0 lg:grid lg:grid-cols-6 lg:overflow-visible">
           {isLoading ? (
             // Loading skeletons
             Array.from({ length: 6 }).map((_, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex flex-col items-center gap-2 animate-pulse"
+                className="flex-shrink-0 flex flex-col items-center gap-2 animate-pulse lg:flex-shrink"
               >
-                <div className="w-16 h-16 rounded-full bg-foreground/10" />
+                <div className="w-16 h-16 rounded-full bg-foreground/10 lg:w-20 lg:h-20" />
                 <div className="w-12 h-3 rounded bg-foreground/10" />
               </div>
             ))
@@ -111,17 +112,17 @@ export const FamousPlayersCarousel = () => {
               <button
                 key={player.id}
                 onClick={() => setSelectedPlayer(player)}
-                className="flex-shrink-0 flex flex-col items-center gap-2 animate-fade-in"
+                className="flex-shrink-0 flex flex-col items-center gap-2 animate-fade-in lg:flex-shrink"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="avatar-glow w-16 h-16">
+                <div className="avatar-glow w-16 h-16 lg:w-20 lg:h-20">
                   <img 
                     src={player.image} 
                     alt={player.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <span className="text-xs text-foreground font-medium max-w-16 truncate">
+                <span className="text-xs text-foreground font-medium max-w-16 truncate lg:max-w-20 lg:text-sm">
                   {player.name}
                 </span>
               </button>
