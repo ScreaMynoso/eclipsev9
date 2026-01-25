@@ -48,12 +48,13 @@ const actions = [
 
 export const QuickActions = () => {
   return (
-    <section className="px-4 py-6">
+    <section className="px-4 py-6 lg:px-0">
       <h2 className="font-display text-lg font-semibold text-foreground mb-4">
         Acesso Rápido
       </h2>
       
-      <div className="flex flex-col gap-3">
+      {/* Mobile/Tablet: column layout | Desktop: grid layout */}
+      <div className="flex flex-col gap-3 lg:grid lg:grid-cols-2 lg:gap-4">
         {actions.map((action, index) => {
           const Icon = action.icon;
           return (
