@@ -48,9 +48,9 @@ export const PlanBanner = ({ currentPlan }: PlanBannerProps) => {
   return (
     <Link 
       to="/ativar-key" 
-      className="mx-4 my-6 block"
+      className="mx-4 my-6 block lg:mx-0"
     >
-      <div className={`glass-card p-4 rounded-2xl bg-gradient-to-r ${details.gradient}`}>
+      <div className={`glass-card p-4 rounded-2xl bg-gradient-to-r ${details.gradient} lg:p-6`}>
         <div className="flex items-center gap-4">
           <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
             currentPlan === "black" ? "bg-purple-500/20" : "bg-foreground/10"
